@@ -33,7 +33,7 @@ $_START_TIME = microtime(TRUE);
 // Choose a language. See below in the language section for options.
 // Default: $_CONFIG['lang'] = "en";
 //
-$_CONFIG['lang'] = "en";
+$_CONFIG['lang'] = "zh_CN";
 
 //
 // Display thumbnails when hovering over image entries in the list.
@@ -71,14 +71,14 @@ $_CONFIG['mobile_default'] = false;
 // Will the files be opened in a new window? true/false
 // Default: $_CONFIG['open_in_new_window'] = false;
 //
-$_CONFIG['open_in_new_window'] = false;
+$_CONFIG['open_in_new_window'] = true;
 
 //
 // How deep in subfolders will the script search for files?
 // Set it larger than 0 to display the total used space.
 // Default: $_CONFIG['calculate_space_level'] = 0;
 //
-$_CONFIG['calculate_space_level'] = 0;
+$_CONFIG['calculate_space_level'] = 1;
 
 //
 // Will the page header be displayed? 0=no, 1=yes.
@@ -90,7 +90,7 @@ $_CONFIG['show_top'] = true;
 // The title for the page
 // Default: $_CONFIG['main_title'] = "Encode Explorer";
 //
-$_CONFIG['main_title'] = "Encode Explorer";
+$_CONFIG['main_title'] = "小安科技 - 版本发布归档";
 
 //
 // The secondary page titles, randomly selected and displayed under the main header.
@@ -131,13 +131,13 @@ $_CONFIG['charset'] = "UTF-8";
 // The array of folder names that will be hidden from the list.
 // Default: $_CONFIG['hidden_dirs'] = array();
 //
-$_CONFIG['hidden_dirs'] = array();
+$_CONFIG['hidden_dirs'] = array(".git");
 
 //
 // Filenames that will be hidden from the list.
 // Default: $_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd");
 //
-$_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd");
+$_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd", "README.md", ".log");
 
 //
 // Whether authentication is required to see the contents of the page.
@@ -159,7 +159,7 @@ $_CONFIG['require_login'] = false;
 // For example: $_CONFIG['users'] = array(array("username", "password", "admin"));
 // Default: $_CONFIG['users'] = array();
 //
-$_CONFIG['users'] = array();
+$_CONFIG['users'] = array(array("admin", "Xiaoan2018", "admin"));
 
 //
 // Permissions for uploading, creating new directories and deleting.
@@ -171,7 +171,7 @@ $_CONFIG['users'] = array();
 //
 $_CONFIG['upload_enable'] = true;
 $_CONFIG['newdir_enable'] = true;
-$_CONFIG['delete_enable'] = false;
+$_CONFIG['delete_enable'] = true;
 
 /*
  * UPLOADING
@@ -244,7 +244,7 @@ $_CONFIG['upload_email'] = "";
 // For example: $_CONFIG['log_file'] = ".log.txt";
 // Default: $_CONFIG['log_file'] = "";
 //
-$_CONFIG['log_file'] = "";
+$_CONFIG['log_file'] = ".log";
 
 /*
  * SYSTEM
@@ -2897,7 +2897,7 @@ $(document).ready(function() {
 	if(GateKeeper::isDeleteAllowed()){
 ?>
 	$('td.del a').click(function(){
-		var answer = confirm('Are you sure you want to delete : \'' + $(this).attr("data-name") + "\' ?");
+		var answer = confirm('确认删除：' + $(this).attr("data-name") + ' ？');
 		return answer;
 	});
 <?php
