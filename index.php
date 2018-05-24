@@ -137,7 +137,7 @@ $_CONFIG['hidden_dirs'] = array(".git");
 // Filenames that will be hidden from the list.
 // Default: $_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd");
 //
-$_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd", "README.md", ".log");
+$_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd", "README.md", ".log", ".gitignore");
 
 //
 // Whether authentication is required to see the contents of the page.
